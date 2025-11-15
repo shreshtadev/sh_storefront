@@ -12,7 +12,7 @@ import SearchBar from '../search-bar/SearchBar';
 
 export default component$(() => {
 	const appState = useContext(APP_STATE);
-	const collections = useContext(APP_STATE).collections.filter(
+	useContext(APP_STATE).collections.filter(
 		(item) => item.parent?.name === '__root_collection__' && !!item.featuredAsset
 	);
 
