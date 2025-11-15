@@ -1,6 +1,6 @@
 import { createContextId } from '@qwik.dev/core';
 import { ENV_VARIABLES } from './env';
-import { AppState } from './types';
+import type { AppState } from './types';
 
 export const APP_STATE = createContextId<AppState>('app_state');
 export const AUTH_TOKEN = 'authToken';
