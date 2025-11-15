@@ -4,7 +4,7 @@ import { i18nPlugin } from 'compiled-i18n/vite';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig(async (config) => {
+export default defineConfig((config) => {
 	return {
 		// Enable to analyze via source-map-explorer
 		ssr: { target: 'webworker' },
