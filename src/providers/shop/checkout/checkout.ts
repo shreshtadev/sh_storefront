@@ -145,13 +145,19 @@ gql`
 	query getPaymentInfo($code: String!) {
 		manualPaymentConfigByCode(code: $code) {
 			code
-			accountName
-			accountNumber
-			bankName
-			ifsc
-			upiId
-			enabled
-			phone
+			handler {
+				code
+			}
+			customFields {
+				accountName
+				accountNumber
+				contactNumber
+				bankName
+				branchName
+				ifscCode
+				extraInstructions
+				upiId
+			}
 		}
 	}
 `;

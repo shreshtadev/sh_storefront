@@ -31,19 +31,19 @@ export default component$<PaymentInfoProps>(({ methodCode }) => {
 
 					<div class="grid grid-cols-1 gap-2 text-sm text-gray-700">
 						<p>
-							<strong>🏦 Bank:</strong> {paymentData.value.bankName}
+							<strong>🏦 Bank:</strong> {paymentData.value.customFields.bankName}
 						</p>
 						<p>
-							<strong>👤 Account Name:</strong> {paymentData.value.accountName}
+							<strong>👤 Account Name:</strong> {paymentData.value.customFields.accountName}
 						</p>
 						<p>
-							<strong>🔢 Account Number:</strong> {paymentData.value.accountNumber}
+							<strong>🔢 Account Number:</strong> {paymentData.value.customFields.accountNumber}
 						</p>
 						<p>
-							<strong>🏷️ IFSC:</strong> {paymentData.value.ifsc}
+							<strong>🏷️ IFSC:</strong> {paymentData.value.customFields.ifscCode}
 						</p>
 						<p>
-							<strong>📞 Phone:</strong> {paymentData.value.phone}
+							<strong>📞 Phone:</strong> {paymentData.value.customFields.contactNumber}
 						</p>
 					</div>
 
@@ -54,11 +54,15 @@ export default component$<PaymentInfoProps>(({ methodCode }) => {
 							class="w-40 h-40 object-contain rounded-md border"
 						/>
 						<p class="text-sm text-gray-800">
-							<strong>💡 UPI ID:</strong> {paymentData.value.upiId}
+							<strong>💡 UPI ID:</strong> {paymentData.value.customFields.upiId}
 						</p>
+						<small class="text-sm text-gray-800">
+							<strong>💡 Extra Instructions:</strong>{' '}
+							{paymentData.value.customFields.extraInstructions}
+						</small>
 						<button
 							class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
-							onClick$={() => navigator.clipboard.writeText(paymentData.value.upiId)}
+							onClick$={() => navigator.clipboard.writeText(paymentData.value.customFields.upiId)}
 						>
 							📋 Copy UPI ID
 						</button>
