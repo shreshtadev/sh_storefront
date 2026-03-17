@@ -18,3 +18,4 @@ export const DEV_API = ENV_VARIABLES.VITE_VENDURE_DEV_URL || 'https://readonlyde
 export const PROD_API = ENV_VARIABLES.VITE_VENDURE_PROD_URL || 'https://readonlydemo.vendure.io';
 export const LOCAL_API = ENV_VARIABLES.VITE_VENDURE_LOCAL_URL || 'http://localhost:3000';
 export const COMPANY_NAME = ENV_VARIABLES.VITE_COMPANY_NAME || 'Shreshta';
+export const DEFAULT_CHANNEL = ENV_VARIABLES.VITE_DEFAULT_CHANNEL || 'default-channel';

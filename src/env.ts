@@ -10,6 +10,7 @@ const envVariables = z.object({
 	VITE_SECURE_COOKIE: z.string(),
 	VITE_STRIPE_PUBLISHABLE_KEY: z.string(),
 	VITE_COMPANY_NAME: z.string(),
+	VITE_DEFAULT_CHANNEL: z.string(),
 });
 
 export const ENV_VARIABLES = envVariables.parse(import.meta.env);

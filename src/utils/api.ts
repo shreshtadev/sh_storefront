@@ -2,7 +2,7 @@ import { server$ } from '@qwik.dev/router';
 import { isBrowser } from '@qwik.dev/core/build';
 import type { DocumentNode } from 'graphql/index';
 import { print } from 'graphql/index';
-import { AUTH_TOKEN, DEV_API, HEADER_AUTH_TOKEN_KEY, PROD_API } from '~/constants';
+import { AUTH_TOKEN, DEFAULT_CHANNEL, DEV_API, HEADER_AUTH_TOKEN_KEY, PROD_API } from '~/constants';
 import type { Options as RequesterOptions } from '~/graphql-wrapper';
 import { getCookie, setCookie } from '.';
 
@@ -57,7 +57,10 @@ const execute = async <R, V = Record<string, any>>(
 };
 
 const createHeaders = () => {
-	let headers: Record<string, string> = { 'Content-Type': 'application/json' };
+	let headers: Record<string, string> = {
+		'Content-Type': 'application/json',
+		'vendure-token': DEFAULT_CHANNEL,
+	};
 	if (isBrowser) {
 		const token = getCookie(AUTH_TOKEN);
 		headers = { ...headers, Authorization: `Bearer ${token}` };
